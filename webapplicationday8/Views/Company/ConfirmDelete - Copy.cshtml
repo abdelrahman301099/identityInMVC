@@ -1,0 +1,51 @@
+﻿@{
+  
+}
+
+@model Drug
+
+<h1 style="text-align: center;">Confirm Delete</h1>
+
+
+
+    <div class="drug-item">
+      
+        <div class="drug-details">
+            <h2>@Model.Name</h2>
+            <p><strong>ID:</strong> @Model.ID</p>
+         
+        <p><strong>Description:</strong></p> 
+        @HtmlHelperExtensions.DisplayAsParagraph(Model.Description)
+
+        
+           
+
+            <p><strong>Company:</strong> @Model.Company.Name</p>
+            <p><strong>Manufacture Date:</strong> @Model.ManufactureDate.ToShortDateString()</p>
+            <p><strong>Expiration Date:</strong> @Model.ExpirationDate.ToShortDateString()</p>
+        </div>
+    </div>
+
+<form method="post" action="~/drug/ConfirmDelete">
+    @Html.HiddenFor(d => d.ID)
+        <div class="text-center">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        <a href="~/Drug/GetInfo" class="btn btn-Secondary">Cancel</a>
+          
+        </div>
+    </form>
+
+
+
+<style>
+    .drug-item {
+        background-color: antiquewhite;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 10px auto;
+    }
+</style>

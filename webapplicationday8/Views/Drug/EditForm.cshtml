@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Drug 
+
+
+<form  method="post"  asp-action="EditForm" asp-controller="Drug">
+   
+    <input hidden asp-for="ID" />
+
+   
+    <label asp-for="Name"></label>
+    <input class="form-control" value="@Model.Name" asp-for="Name" />
+
+    <label asp-for="Company.Name"></label>
+    <br />
+  
+    <select asp-items="ViewBag.Companies" asp-for="CompanyID"></select>
+   <br />
+
+
+
+    <label asp-for="ManufactureDate"></label>
+    <input class="form-control" type="date" asp-for="ManufactureDate" value="@Model.ManufactureDate.ToString("yyyy-MM-dd")" />
+
+    <label asp-for="ExpirationDate"></label>
+    <input class="form-control" type="date" asp-for="ExpirationDate" value="@Model.ExpirationDate.ToString("yyyy-MM-dd")" />
+
+
+    <input class="btn btn-dark" value=" Edit" asp-action="EditForm" type="submit" / >
+
+
+    <a href="~/Drug/GetInfo">Go back to GetInfo</a>
+
+</form>

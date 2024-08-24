@@ -1,0 +1,31 @@
+﻿
+@model IEnumerable<Drug>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>CompanyName</th> 
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Company.Name</td>
+            <td>
+                 <img src="~/Images/@item.ImagePath" style="width=50px"/>  
+                
+            </td>
+            <td>
+                     <a href="~/Drug/ViewDetails/@item.ID" class="btn btn-success" >View details</a>
+                     <a href="~/Drug/EditForm/@item.ID" class="btn btn-dark">Edit</a>  
+                     <a href="~/Drug/confirmDelete/@item.ID" class="btn btn-danger">Delete</a>
+
+            </td>
+           
+        </tr>
+    }
+</table>
+ <a href="~/Drug/create" class="btn btn-primary" > ADD Item</a>

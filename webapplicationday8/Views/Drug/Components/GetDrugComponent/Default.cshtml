@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<Drug>
+@{
+}
+<div style="border: 2px solid #ccc; padding: 20px; border-radius: 10px; background-color: #f9f9f9; max-width: 400px; margin: 0 auto; text-align: center;">
+<h3>These are the Drugs Company Name in our website</h3>
+<ol style="list-style-position: inside; text-align: center; padding-left: 0;">
+@foreach(var item in Model)
+{
+ 
+        <li style="text-align:
+center">@item.Company.Name</li>
+ 
+}
+</ol>
+</div>

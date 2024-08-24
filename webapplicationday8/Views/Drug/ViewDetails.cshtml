@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    Drug drug = ViewData["d"] as Drug;
+}
+<h1 style="text-align: center;">Drug Info</h1>
+
+@if (drug != null)
+{
+    <div class="drug-item">
+        <div class="drug-image">
+           <img src="~/Images/@drug.ImagePath" />
+        </div>
+        <div class="drug-details">
+            <h2>@drug.Name</h2>
+            <p><strong>ID:</strong> @drug.ID</p>
+            
+            <p><strong>Description:</strong> @drug.Description</p>
+        </div>
+    </div>
+}
+else
+{
+    <p style="text-align: center;">No drug information available.</p>
+}
+
+<style>
+    .drug-item {
+        background-color: antiquewhite;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 0 auto; /* Center the item on the page */
+    }
+
+    .drug-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .drug-details h2 {
+        color: blue;
+        margin-bottom: 10px;
+    }
+  

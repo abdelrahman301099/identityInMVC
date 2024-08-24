@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+@model Drug
+
+
+<div asp-validation-summary="ModelOnly"></div>
+<form method="Post" action="~/Drug/create">
+    <select asp-items="ViewBag.Drugs" asp-for="CompanyID"></select>
+    
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+       
+        <input asp-for="Name" class="form-control" />
+        
+        <span asp-validation-for="Name" class="alert-danger"></span>
+    </div>
+  
+    <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="alert-danger"></span>
+       
+    </div>
+    <div class="mb-3">
+        <label for="ImagePath" class="form-label">Image Path</label>
+        <input asp-for="ImagePath" class="form-control" />
+        <span asp-validation-for="ImagePath" class="alert-danger"></span>
+      
+    </div>
+    
+    <div class="mb-3">
+        <label for="ManufactureDate" class="form-label">Manufacture Date</label>
+       
+        <input asp-for="ManufactureDate" class="form-control" type ="date" />
+        <span asp-validation-for="ManufactureDate" class="alert-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="ExpirationDate" class="form-label">Expiration Date</label>
+        <input asp-for="ExpirationDate" class="form-control" type="date" />
+        <span asp-validation-for="ExpirationDate" class="alert-danger"></span>
+    </div>
+
+    <input type="submit" value="Add Drug" class="btn btn-primary" />
+</form>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
